@@ -15,15 +15,16 @@ class _counterState extends State<counter> {
   @override
   Widget build(BuildContext context) {
     final countProvider = Provider.of<CountProvider>(context,listen: false);
+    // ignore: avoid_print
     print("Build");
     return Scaffold(
 
       appBar: AppBar(
-        title: Text('Counter App using Provider'),
+        title: const Text('Counter App using Provider'),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           countProvider.setCounter();
         },
@@ -33,7 +34,7 @@ class _counterState extends State<counter> {
         print('object');
         return Center(
           child:
-          Text(countProvider.count.toString(),style: TextStyle(fontSize: 50),),
+          Text(countProvider.count.toString(),style: const TextStyle(fontSize: 50),),
         );
       },
       )
